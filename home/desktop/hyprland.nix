@@ -1,14 +1,14 @@
 { pkgs, config, inputs, ... }:
 
 let
-  colors = config.lib.catppuccin.getColors config.catppuccin;
+  colors = import ../lib/palette.nix;
 
   # Store-paths вместо bare-имён — не зависит от $PATH,
   # пересобирается вместе с поколением.
   terminal   = "${pkgs.kitty}/bin/kitty";
   browser    = "${pkgs.brave}/bin/brave";
   fileman    = "${pkgs.kitty}/bin/kitty -e ${pkgs.yazi}/bin/yazi";
-  rofi       = "${pkgs.rofi-wayland}/bin/rofi";
+  rofi       = "${pkgs.rofi}/bin/rofi";
   cliphist   = "${pkgs.cliphist}/bin/cliphist";
   wlpaste    = "${pkgs.wl-clipboard}/bin/wl-paste";
   wlcopy     = "${pkgs.wl-clipboard}/bin/wl-copy";

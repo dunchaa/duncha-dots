@@ -2,7 +2,7 @@
 
 let
   wallImg = ../../config/wallpapers/sakura-gate.jpg;
-  colors = config.lib.catppuccin.getColors config.catppuccin;
+  colors  = import ../lib/palette.nix;
 in
 {
   programs.hyprlock = {
