@@ -70,6 +70,7 @@
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
+    setSessionVariables = true; # явно: новый default с 26.05 будет false
   };
 
   # Environment variables

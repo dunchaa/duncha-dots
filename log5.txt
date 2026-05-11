@@ -1,0 +1,53 @@
+warning: updating lock file "/home/duncha/duncha-dots/flake.lock":
+• Updated input 'catppuccin/nixpkgs':
+    'github:NixOS/nixpkgs/549bd84d6279f9852cae6225e372cc67fb91a4c1?narHash=sha256-hGdgeU2Nk87RAuZyYjyDjFL6LK7dAZN5RE9%2BhrDTkDU%3D' (2026-05-05)
+  → follows 'nixpkgs'
+building the system configuration...
+warning: Git tree '/home/duncha/duncha-dots' is dirty
+evaluation warning: The default value of xdg.userDirs.setSessionVariables has changed from true to false.
+                    You are currently using the legacy default (true) because home.stateVersion is less than "26.05".
+                    To silence this warning and keep legacy behavior, set:
+                      xdg.userDirs.setSessionVariables = true;
+                    To adopt the new default behavior, set:
+                      xdg.userDirs.setSessionVariables = false;
+error:
+       … while calling the 'head' builtin
+         at /nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/lib/attrsets.nix:1712:13:
+         1711|           if length values == 1 || pred here (elemAt values 1) (head values) then
+         1712|             head values
+             |             ^
+         1713|           else
+
+       … while evaluating the attribute 'value'
+         at /nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/lib/modules.nix:1166:7:
+         1165|     // {
+         1166|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+             |       ^
+         1167|       inherit (res.defsFinal') highestPrio;
+
+       … while evaluating the option `system.build.toplevel':
+
+       … while evaluating definitions from `/nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/nixos/modules/system/activation/top-level.nix':
+
+       … while evaluating the option `warnings':
+
+       … while evaluating definitions from `/nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/nixos/modules/system/boot/systemd.nix':
+
+       … while evaluating the option `systemd.services.mandb.serviceConfig':
+
+       … while evaluating definitions from `/nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/nixos/modules/system/boot/systemd.nix':
+
+       … while evaluating the option `systemd.services.mandb.script':
+
+       … while evaluating definitions from `/nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/nixos/modules/misc/man-db.nix':
+
+       … while evaluating the option `documentation.man.man-db.manualPages':
+
+       … while evaluating the option `environment.systemPackages':
+
+       … while evaluating definitions from `/nix/store/8jdza5gg3n5h46sv1r9i9vxlgmrqw3hx-source/modules/desktop/hyprland.nix':
+
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
+
+       error: The libsForQt5.polkit-kde-agent package and the corresponding top-level polkit-kde-agent alias have been removed, as KDE Gear 5 and Plasma 5 have reached end of life.
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '/home/duncha/duncha-dots#nixosConfigurations."nixos".config.system.build.toplevel' --no-link --impure' returned non-zero exit status 1.

@@ -19,8 +19,9 @@
   programs.dconf.enable = true;
   security.polkit.enable = true;
 
+  # KDE Plasma 5 EOL → используем KF6/Qt6 вариант из kdePackages.
   environment.systemPackages = [
-    pkgs.polkit-kde-agent
+    pkgs.kdePackages.polkit-kde-agent-1
     pkgs.wl-clipboard
   ];
 
@@ -31,7 +32,7 @@
     after = [ "graphical-session.target" ];
     serviceConfig = {
       Type = "simple";
-      ExecStart = "${pkgs.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1";
+      ExecStart = "${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1";
       Restart = "on-failure";
       RestartSec = 1;
       TimeoutStopSec = 10;
