@@ -34,17 +34,10 @@
     size = 24;
   };
 
-  # GTK settings
-  gtk = {
-    enable = true;
-    iconTheme = {
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-	accent = "mauve";
-      };
-      name = "Papirus-Dark";
-    };
-  };
+  # GTK — иконотеку и тему задаёт глобальный модуль catppuccin
+  # (catppuccin.enable + flavor/accent выше). Не дублируем тут,
+  # иначе конфликт по gtk.iconTheme.package.
+  gtk.enable = true;
 
   # QT settings
   qt = {

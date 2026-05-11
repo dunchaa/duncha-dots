@@ -4,6 +4,7 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
+    shellWrapperName = "yy"; # явно фиксируем legacy-имя, иначе warning при stateVersion < 26.05
 
     settings = {
       manager = {

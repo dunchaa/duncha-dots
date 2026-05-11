@@ -1,0 +1,63 @@
+warning: Git tree '/home/duncha/duncha-dots' is dirty
+building the system configuration...
+warning: Git tree '/home/duncha/duncha-dots' is dirty
+evaluation warning: The default value of `programs.yazi.shellWrapperName` has changed from `"yy"` to `"y"`.
+                    You are currently using the legacy default (`"yy"`) because `home.stateVersion` is less than "26.05".
+                    To silence this warning and keep legacy behavior, set:
+                      programs.yazi.shellWrapperName = "yy";
+                    To adopt the new default behavior, set:
+                      programs.yazi.shellWrapperName = "y";
+error:
+       … while calling the 'head' builtin
+         at /nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/lib/attrsets.nix:1712:13:
+         1711|           if length values == 1 || pred here (elemAt values 1) (head values) then
+         1712|             head values
+             |             ^
+         1713|           else
+
+       … while evaluating the attribute 'value'
+         at /nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/lib/modules.nix:1166:7:
+         1165|     // {
+         1166|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+             |       ^
+         1167|       inherit (res.defsFinal') highestPrio;
+
+       … while evaluating the option `system.build.toplevel':
+
+       … while evaluating definitions from `/nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/nixos/modules/system/activation/top-level.nix':
+
+       … while evaluating the option `warnings':
+
+       … while evaluating definitions from `/nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/nixos/modules/system/boot/systemd.nix':
+
+       … while evaluating the option `systemd.services.home-manager-duncha.serviceConfig':
+
+       … while evaluating definitions from `/nix/store/wa3dqnrb7g80zcxqpvn3az7lchqhzl04-source/nixos':
+
+       … while evaluating the option `home-manager.users.duncha.home.file.".manpath".source':
+
+       … while evaluating definitions from `/nix/store/wa3dqnrb7g80zcxqpvn3az7lchqhzl04-source/modules/files.nix':
+
+       … while evaluating the option `home-manager.users.duncha.home.file.".manpath".text':
+
+       … while evaluating definitions from `/nix/store/wa3dqnrb7g80zcxqpvn3az7lchqhzl04-source/modules/programs/man/man-db.nix':
+
+       … while evaluating the option `home-manager.users.duncha.home.packages':
+
+       … while evaluating definitions from `/nix/store/wa3dqnrb7g80zcxqpvn3az7lchqhzl04-source/modules/misc/gtk.nix':
+
+       … while evaluating the option `home-manager.users.duncha.gtk.gtk2.iconTheme.package':
+
+       … while evaluating definitions from `/nix/store/wa3dqnrb7g80zcxqpvn3az7lchqhzl04-source/modules/misc/gtk/gtk2.nix':
+
+       … while evaluating the option `home-manager.users.duncha.gtk.iconTheme.package':
+
+       (stack trace truncated; use '--show-trace' to show the full, detailed trace)
+
+       error: The option `home-manager.users.duncha.gtk.iconTheme.package' is defined multiple times while it's expected to be unique.
+
+       Definition values:
+       - In `/nix/store/kj8i3mz5g28n89w6z00ky2s2x2j8dwmx-source/home/default.nix': <derivation catppuccin-papirus-folders-0-unstable-2024-08-06>
+       - In `/nix/store/xxkc3i81mv15cg0bgab8xsb9x1yiyhkh-source/modules/home-manager/gtk.nix': <derivation catppuccin-papirus-folders-0-unstable-2024-08-06>
+       Use `lib.mkForce value` or `lib.mkDefault value` to change the priority on any of these definitions.
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '/home/duncha/duncha-dots#nixosConfigurations."nixos".config.system.build.toplevel' --no-link --impure' returned non-zero exit status 1.
