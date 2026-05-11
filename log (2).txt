@@ -1,12 +1,6 @@
 warning: Git tree '/home/duncha/duncha-dots' is dirty
 building the system configuration...
 warning: Git tree '/home/duncha/duncha-dots' is dirty
-evaluation warning: The default value of `programs.yazi.shellWrapperName` has changed from `"yy"` to `"y"`.
-                    You are currently using the legacy default (`"yy"`) because `home.stateVersion` is less than "26.05".
-                    To silence this warning and keep legacy behavior, set:
-                      programs.yazi.shellWrapperName = "yy";
-                    To adopt the new default behavior, set:
-                      programs.yazi.shellWrapperName = "y";
 error:
        … while calling the 'head' builtin
          at /nix/store/h9wn92hv33sizprch7fcp16lfs1k3w5j-source/lib/attrsets.nix:1712:13:
@@ -42,22 +36,8 @@ error:
 
        … while evaluating definitions from `/nix/store/wa3dqnrb7g80zcxqpvn3az7lchqhzl04-source/modules/programs/man/man-db.nix':
 
-       … while evaluating the option `home-manager.users.duncha.home.packages':
-
-       … while evaluating definitions from `/nix/store/wa3dqnrb7g80zcxqpvn3az7lchqhzl04-source/modules/misc/gtk.nix':
-
-       … while evaluating the option `home-manager.users.duncha.gtk.gtk2.iconTheme.package':
-
-       … while evaluating definitions from `/nix/store/wa3dqnrb7g80zcxqpvn3az7lchqhzl04-source/modules/misc/gtk/gtk2.nix':
-
-       … while evaluating the option `home-manager.users.duncha.gtk.iconTheme.package':
-
        (stack trace truncated; use '--show-trace' to show the full, detailed trace)
 
-       error: The option `home-manager.users.duncha.gtk.iconTheme.package' is defined multiple times while it's expected to be unique.
-
-       Definition values:
-       - In `/nix/store/kj8i3mz5g28n89w6z00ky2s2x2j8dwmx-source/home/default.nix': <derivation catppuccin-papirus-folders-0-unstable-2024-08-06>
-       - In `/nix/store/xxkc3i81mv15cg0bgab8xsb9x1yiyhkh-source/modules/home-manager/gtk.nix': <derivation catppuccin-papirus-folders-0-unstable-2024-08-06>
-       Use `lib.mkForce value` or `lib.mkDefault value` to change the priority on any of these definitions.
+       error: A definition for option `home-manager.users.duncha.home.packages."[definition 5-entry 1]"' is not of type `package'. Definition values:
+       - In `/nix/store/mlmhna75kn19dv3fphcg67pl4h8b17ld-source/home/desktop/hyprland.nix': "/nix/store/9804f5fckvdmysp9kcs1pabxa9ww3jr2-hyprshot-1.3.0/bin/hyprshot"
 Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '/home/duncha/duncha-dots#nixosConfigurations."nixos".config.system.build.toplevel' --no-link --impure' returned non-zero exit status 1.

@@ -299,9 +299,11 @@ in
     };
   };
 
-  home.packages = with pkgs; [
-    hyprshot       # Screenshot tool
-    brightnessctl  # Brightness
-    pamixer        # Volume (используется в bindel/bindl)
+  # Без `with pkgs;` — иначе let-binding `hyprshot`/`pamixer` (строки-пути)
+  # перекрывают атрибуты pkgs и home.packages получает строку, а не derivation.
+  home.packages = [
+    pkgs.hyprshot       # Screenshot tool
+    pkgs.brightnessctl  # Brightness
+    pkgs.pamixer        # Volume (используется в bindel/bindl)
   ];
 }
