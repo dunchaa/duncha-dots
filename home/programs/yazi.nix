@@ -24,6 +24,14 @@
 	image_quality = 75;
       };
     };
+
+    plugins = {
+      full-border = pkgs.yaziPlugins.full-border;
+    };
+
+    initLua = ''
+      require("full-border"):setup()
+    '';
   };
 
   home.packages = with pkgs; [

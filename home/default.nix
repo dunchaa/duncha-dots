@@ -15,7 +15,7 @@
   ];
 
   # User
-  home.username = "${user}";
+  home.username = user;
   home.homeDirectory = "/home/${user}";
 
   # Global theme settings
@@ -58,6 +58,9 @@
     # Fonts
     nerd-fonts.jetbrains-mono
     nerd-fonts.iosevka
+
+    # GUI
+    brave
 
     # Utils
     ripgrep

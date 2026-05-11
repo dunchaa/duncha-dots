@@ -1,19 +1,20 @@
-{ inputs, pkgs, ... }:
+{ config, pkgs, user, inputs, ... }:
 
 {
   home.packages = with pkgs; [
-    aylur-ags
+    ags
 
     # Dependencies
     bun
     dart-sass
     fd
-    brightnessctl
     swww
     matugen
     slurp
   ];
 
-  # Symlink
-  xdg.configFile."ags".source = config.lib.file.mkOutOfStoreSymlink "/home/${user}/.dotfiles/config/ags";
+  # Symlink — путь берётся из home.homeDirectory, без хардкода /home/${user}
+  xdg.configFile."ags".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/.dotfiles/config/ags";
 }

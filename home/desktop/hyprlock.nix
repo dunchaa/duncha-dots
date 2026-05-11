@@ -36,7 +36,7 @@ in
 	  font_color = "rgb(${colors.text.rgb})";
 	  
 	  fade_on_empty = true;
-	  placeholder_text = "<i>Password...<i>";
+	  placeholder_text = "<i>Password...</i>";
 	  hide_input = false;
 	  position = "0, -20";
 	  halign = "center";

@@ -7,6 +7,8 @@
   # XDG Portals
   xdg.portal = {
     enable = true;
+    xdgOpenUsePortal = true;
+    config.common.default = [ "hyprland" "gtk" ];
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-hyprland
@@ -36,10 +38,10 @@
     };
   };
 
-  # Hardware acceleration
-  hardware.opengl = {
+  # Hardware acceleration (renamed from hardware.opengl in 24.11)
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Display manager (SDDM)

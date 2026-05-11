@@ -1,28 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  #fish
+  # fish — env через системный programs.fish.enable (vendor_conf.d).
+  # POSIX-source nix-daemon руками не нужен, NixOS делает это сам.
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
       set -g fish_greeting ""
     '';
-
-    # Fish POSIX compatability fix
-    loginShellInit = ''
-      if test -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-        fenv source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-      end
-      if test -e /nix/var/nix/profiles/default/etc/profile.d/nix.sh
-        fenv source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
-      end
-    '';
-    plugins = [
-      {
-        name = "foreign-env";
-	src = pkgs.fishPlugins.foreign-env.src;
-      }
-    ];
 
     # Aliases
     shellAliases = {

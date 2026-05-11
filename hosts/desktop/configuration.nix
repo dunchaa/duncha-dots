@@ -23,7 +23,12 @@
     isNormalUser = true;
     description = "Main";
     extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
+    shell = pkgs.fish;
   };
+
+  # Fish at system level — кладёт vendor-конфиги в /etc/fish/conf.d
+  # и подхватывает nix-daemon без ручного fenv-source.
+  programs.fish.enable = true;
 
   # Garbage Collector
   nix.gc = {

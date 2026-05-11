@@ -6,7 +6,7 @@
   networking.hostName = "nixos"; # Device name in local network
 
   # PipeWire
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false; # renamed from hardware.pulseaudio in 24.11
   security.rtkit.enable = true; # Realtime priority for sound
   
   services.pipewire = {
